@@ -5,6 +5,8 @@ import './index.css';
 
 // Now that you’ve created a ThemeContext, import it into the ContactsApp.js file. In the ContactsApp function component, wrap the existing returned children inside a <ThemeContext.Provider> component with a value prop set to "light".
 
+// Step 06: In ContactsApp.js, remove the unused prop drilling.
+
 const family = [
   {
     name: "Finn the Human"
@@ -28,8 +30,8 @@ export const ContactsApp = () => {
     <ThemeContext.Provider value="light">
       <div>
         <h1>Contacts</h1>
-        <ContactsSection contacts={family} name="Family" theme="dark" />
-        <ContactsSection contacts={friends} name="Friends" theme="dark" />
+        <ContactsSection contacts={family} name="Family" />
+        <ContactsSection contacts={friends} name="Friends" />
       </div>
     </ThemeContext.Provider>
   );
