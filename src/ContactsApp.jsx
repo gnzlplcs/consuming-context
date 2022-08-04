@@ -25,14 +25,18 @@ const friends = [
   }
 ];
 
+// Our previous version of ContactsApp renders a single <ThemeContext.Provider> around all its children. Replace that single Provider with one wrapped around each of the <ContactsSection> components.
+
 export const ContactsApp = () => {
   return (
-    <ThemeContext.Provider value="light">
-      <div>
-        <h1>Contacts</h1>
+    <div>
+      <h1>Contacts</h1>
+      <ThemeContext value="light">
         <ContactsSection contacts={family} name="Family" />
+      </ThemeContext>
+      <ThemeContext value="dark">
         <ContactsSection contacts={friends} name="Friends" />
-      </div>
-    </ThemeContext.Provider>
+      </ThemeContext>
+    </div>
   );
 };
