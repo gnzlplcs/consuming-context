@@ -1,10 +1,10 @@
-// In the ContactItem.js file, remove the theme prop from the ContactItem component’s prop list. Have it use React’s useContext() hook to retrieve the ThemeContext’s provided theme value instead.
-
 import React, { useContext } from "react";
 import { ThemeContext } from "./ThemeContext";
 
+// Then, in ContactItem.js, use destructuring to access only the theme value from the object returned by useContext().
+
 export const ContactItem = ({ name }) => {
-  const theme = useContext(ThemeContext)
+  const { theme } = useContext(ThemeContext);
 
   return (
     <div className={`theme-${theme}`}>

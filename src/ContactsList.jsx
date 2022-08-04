@@ -1,5 +1,3 @@
-// In ContactsList.js, remove the unused prop drilling.
-
 import React from "react";
 import { ContactItem } from "./ContactItem";
 

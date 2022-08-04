@@ -1,14 +1,15 @@
-// In the workspace’s ThemeContext.js file, use React.createContext() to create a new context. Then, store the new context in a variable named ThemeContext. Finally, export ThemeContext as a named export.
-
-import React from "react";
+import React, { useState } from "react";
 
 export const ThemeContext = React.createContext();
 
-// In the workspace’s ThemeContext.js file, create and export a new component named ThemeArea. It should take in two props: children and initialTheme.
-// For the ThemeArea component’s returned value, return the children prop wrapped in a ThemeContext.Provider component. Use the initialTheme prop as the value for the ThemeContext.Provider.
+// First, in the ThemeArea component, call useState() to create a piece of state named theme along with a state setter function. Use the initialTheme prop as the initial state value.
+
+// Provide an object containing both the theme and setTheme values to the ThemeContext.Provider component with the value prop.
+
 export const ThemeArea = ({ children, initialTheme }) => {
+  const [theme, setTheme] = useState(initialTheme);
   return (
-    <ThemeContext.Provider value={initialTheme}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );
